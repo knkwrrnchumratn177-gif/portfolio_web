@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#7152b8">
+<meta name="description" content="แฟ้มสะสมผลงานของกนกวรรณ ชุมรัตน์ และพัฒนวิช ชูมณี">
+<title>PORTFOLIO | Kranokwan & Pattanawit</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+:root{
+  --primary:#7252b8;--primary-dark:#50358e;--lavender:#eee8fb;
+  --pink:#f7e9f2;--ink:#282239;--muted:#777184;--white:#fff;
+  --line:#eeeaf4;--shadow:0 18px 45px rgba(63,43,105,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{font-family:'Prompt',sans-serif;color:var(--ink);background:#fdfcff;line-height:1.7;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{width:min(1140px,90%);margin:auto}
+section{padding:92px 0;position:relative}
+.section-head{text-align:center;margin:0 auto 42px;max-width:680px}
+.eyebrow{font-size:12px;letter-spacing:2.5px;font-weight:600;color:var(--primary)}
+.section-head h2{font-size:clamp(26px,4vw,36px);margin:7px 0;color:var(--ink)}
+.section-head p{font-size:14px;color:var(--muted)}
+/* navigation */
+.site-header{position:fixed;z-index:1000;inset:0 0 auto;background:rgba(255,255,255,.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(230,222,244,.75);transition:.3s}
+.site-header.scrolled{box-shadow:0 8px 25px rgba(40,25,70,.08)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:700;font-size:20px;color:var(--primary);letter-spacing:.3px}
+.brand span{color:#c17aa8}
+.nav-links{display:flex;align-items:center;gap:25px;list-style:none}
+.nav-links a{font-size:13px;color:#625b70;transition:.25s}
+.nav-links a:hover,.nav-links a.active{color:var(--primary)}
+.menu-toggle{display:none;border:0;background:var(--lavender);color:var(--primary);width:42px;height:42px;border-radius:13px;font-size:19px}
+/* hero */
+.hero{min-height:760px;padding:145px 0 90px;display:flex;align-items:center;overflow:hidden;background:radial-gradient(circle at 12% 18%,#fff 0 8%,transparent 30%),linear-gradient(135deg,#f1eaff 0%,#fff8fc 55%,#eee8ff 100%)}
+.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+.hero:before{width:420px;height:420px;background:rgba(174,146,230,.13);right:-130px;top:60px}
+.hero:after{width:260px;height:260px;background:rgba(236,190,218,.18);left:-100px;bottom:-80px}
+.hero-inner{position:relative;z-index:1;text-align:center;width:100%}
+.hero-label{display:inline-flex;align-items:center;gap:9px;padding:8px 17px;border:1px solid #e7ddf8;background:rgba(255,255,255,.8);border-radius:50px;color:var(--primary);font-size:12px;font-weight:500}
+.hero h1{font-size:clamp(32px,5vw,57px);line-height:1.35;margin:22px 0 12px;font-weight:700}
+.hero h1 span{color:var(--primary)}
+.hero-desc{color:var(--muted);font-size:15px;margin-bottom:35px}
+.profile-pair{display:grid;grid-template-columns:repeat(2,minmax(0,300px));justify-content:center;gap:22px;margin:0 auto 32px}
+.profile-card{background:rgba(255,255,255,.9);border:1px solid #eee7f7;padding:22px 20px 20px;border-radius:25px;box-shadow:var(--shadow);transition:transform .35s,box-shadow .35s}
+.profile-card:hover{transform:translateY(-8px);box-shadow:0 24px 50px rgba(63,43,105,.16)}
+.portrait-wrap{width:150px;height:195px;margin:0 auto 16px;padding:5px;border-radius:80px 80px 24px 24px;background:linear-gradient(145deg,#b99be9,#f0cce2)}
+.portrait{width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:76px 76px 20px 20px;background:#f1ebfa}
+.profile-card h3{font-size:19px}
+.profile-card .english{font-size:12px;color:var(--muted)}
+.profile-card .number{display:inline-block;margin-top:9px;background:var(--lavender);color:var(--primary);padding:4px 13px;border-radius:30px;font-size:12px}
+.hero-btn{display:inline-flex;align-items:center;gap:10px;background:var(--primary);color:white;padding:12px 25px;border-radius:40px;font-size:14px;box-shadow:0 10px 24px #7252b83b;transition:.3s}
+.hero-btn:hover{background:var(--primary-dark);transform:translateY(-3px)}
+/* about */
+.about-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.person-info{background:white;border:1px solid var(--line);border-radius:22px;padding:27px;box-shadow:var(--shadow)}
+.person-info h3{color:var(--primary);font-size:19px;margin-bottom:16px}
+.person-info h3 i{margin-right:8px}
+.detail{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid #f1eef5;font-size:13px}
+.detail:last-child{border:0}
+.detail span{color:var(--muted)}
+.detail strong{text-align:right;font-weight:500}
+.school-note{margin-top:22px;padding:22px 25px;border-radius:20px;background:linear-gradient(110deg,#f0eafd,#fff4fa);display:flex;align-items:center;gap:17px}
+.school-note .school-icon{width:53px;height:53px;flex:0 0 53px;border-radius:17px;background:white;color:var(--primary);display:grid;place-items:center;font-size:23px}
+.school-note h3{font-size:15px;color:var(--primary-dark)}
+.school-note p{font-size:13px;color:var(--muted)}
+/* education */
+.education{background:#f6f2fc}
+.timeline{max-width:780px;margin:auto;position:relative}
+.timeline:before{content:"";position:absolute;left:18px;top:10px;bottom:10px;width:2px;background:#d7c9f0}
+.edu-item{position:relative;padding-left:58px;margin-bottom:22px}
+.edu-dot{position:absolute;left:8px;top:20px;width:22px;height:22px;border:5px solid #a88bda;background:white;border-radius:50%;z-index:1}
+.edu-card{background:white;border:1px solid #eee8f7;border-radius:20px;padding:23px 26px;box-shadow:var(--shadow)}
+.edu-card h3{font-size:17px;color:var(--primary)}
+.edu-card p{font-size:13px;color:var(--muted);margin-top:5px}
+.gpa{display:inline-block;margin-top:10px;padding:4px 13px;background:#f0eafd;color:var(--primary);border-radius:30px;font-size:12px}
+/* activities */
+.activity-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.activity-card{background:white;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--shadow);transition:transform .35s,box-shadow .35s}
+.activity-card:hover{transform:translateY(-7px);box-shadow:0 24px 45px rgba(63,43,105,.15)}
+.activity-image{height:220px;width:100%;object-fit:cover;background:#eee7f8}
+.activity-content{padding:22px}
+.activity-tag{font-size:11px;color:var(--primary);font-weight:600;letter-spacing:1px}
+.activity-content h3{font-size:17px;margin:7px 0 9px;line-height:1.5}
+.activity-content p{font-size:13px;color:var(--muted);line-height:1.9}
+/* skills */
+.skills{background:#fff}
+.skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.skill-card{background:linear-gradient(145deg,#f5f0ff,#fff7fb);border:1px solid #eee7f7;border-radius:22px;padding:28px 22px;text-align:center;transition:.3s}
+.skill-card:hover{transform:translateY(-6px)}
+.skill-icon{width:62px;height:62px;margin:0 auto 13px;background:white;color:var(--primary);border-radius:20px;display:grid;place-items:center;font-size:25px;box-shadow:0 8px 20px #7252b81a}
+.skill-card h3{font-size:16px;margin-bottom:5px}
+.skill-card p{font-size:13px;color:var(--muted)}
+/* hobbies */
+.hobbies{background:#f8f5fc}
+.hobby-list{display:flex;justify-content:center;gap:18px;flex-wrap:wrap}
+.hobby{min-width:175px;background:white;border:1px solid var(--line);border-radius:19px;padding:22px 28px;text-align:center;box-shadow:var(--shadow)}
+.hobby i{display:block;font-size:27px;color:var(--primary);margin-bottom:8px}
+.hobby span{font-size:14px}
+/* motto and goal */
+.motto{text-align:center}
+.quote{max-width:780px;margin:auto;padding:35px 25px;border-radius:24px;background:linear-gradient(120deg,#f0eafd,#fff2f8);color:var(--primary-dark);font-size:clamp(21px,3.5vw,30px);font-weight:600}
+.quote i{font-size:19px;color:#bd9cde;margin:0 9px}
+.goal{background:linear-gradient(135deg,#563a91,#8063bf);color:white}
+.goal .eyebrow,.goal .section-head p{color:#e9defc}
+.goal .section-head h2{color:white}
+.goal-box{max-width:830px;margin:auto;text-align:center;padding:35px;border:1px solid #ffffff40;border-radius:25px;background:#ffffff14}
+.goal-box i{font-size:38px;margin-bottom:15px;color:#f2d9ee}
+.goal-box p{font-size:15px;line-height:2;color:#fff}
+/* footer */
+footer{background:#282239;color:white;text-align:center;padding:43px 15px 25px}
+footer h2{font-size:27px;color:#e1d3ff;letter-spacing:2px}
+footer p{font-size:13px;color:#d0c8dc}
+.footer-names{margin:18px 0;line-height:2;font-size:13px}
+.copyright{border-top:1px solid #514961;margin:25px auto 0;padding-top:18px;color:#aaa1b8;font-size:11px}
+/* effects */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.delay-1{transition-delay:.12s}.delay-2{transition-delay:.22s}.delay-3{transition-delay:.32s}
+.progress-bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,#9a7bd5,#e7a9d0);z-index:1100}
+.back-top{position:fixed;right:20px;bottom:20px;width:46px;height:46px;border:0;border-radius:50%;background:var(--primary);color:white;font-size:17px;box-shadow:var(--shadow);cursor:pointer;opacity:0;visibility:hidden;transform:translateY(10px);transition:.3s;z-index:900}
+.back-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+@media(max-width:900px){.nav-links{gap:14px}.nav-links a{font-size:12px}.activity-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:680px){
+  section{padding:68px 0}
+  .nav{height:68px}.menu-toggle{display:block}
+  .nav-links{display:none;position:absolute;top:68px;left:0;right:0;background:white;padding:10px 5% 18px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch;gap:0}
+  .nav-links.open{display:flex}.nav-links a{display:block;padding:10px 12px;font-size:14px;border-radius:10px}
+  .hero{min-height:auto;padding:120px 0 75px}
+  .hero h1{font-size:34px}.hero-desc{font-size:13px}
+  .profile-pair{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .profile-card{padding:15px 10px;border-radius:19px}
+  .portrait-wrap{width:100%;max-width:130px;height:170px}
+  .profile-card h3{font-size:14px}.profile-card .english{font-size:10px}.profile-card .number{font-size:10px}
+  .about-grid,.activity-grid,.skill-grid{grid-template-columns:1fr}
+  .person-info{padding:21px}.detail{font-size:12px}
+  .school-note{align-items:flex-start;padding:18px}
+  .activity-image{height:220px}
+  .edu-card{padding:20px}.edu-card h3{font-size:15px}
+  .goal-box{padding:25px 20px}.goal-box p{font-size:13px}
+  .hobby{min-width:135px;flex:1}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="progress-bar" id="progressBar"></div>
+
+<header class="site-header" id="header">
+  <div class="container nav">
+    <a class="brand" href="#home">MY <span>PORTFOLIO.</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="เปิดเมนู"><i class="fa-solid fa-bars"></i></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">หน้าแรก</a></li>
+      <li><a href="#about">ประวัติส่วนตัว</a></li>
+      <li><a href="#education">การศึกษา</a></li>
+      <li><a href="#activities">กิจกรรม</a></li>
+      <li><a href="#skills">ทักษะ</a></li>
+      <li><a href="#goal">เป้าหมาย</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="container hero-inner">
+    <div class="hero-label"><i class="fa-solid fa-sparkles"></i> WELCOME TO OUR PORTFOLIO</div>
+    <h1>แฟ้มสะสมผลงาน<br><span>PORTFOLIO</span></h1>
+    <p class="hero-desc">รวบรวมประวัติส่วนตัว ความรู้ ความสามารถ กิจกรรม และประสบการณ์</p>
+
+    <div class="profile-pair">
+      <article class="profile-card reveal">
+        <div class="portrait-wrap"><img class="portrait" src="images/kranokwan.jpg" alt="รูปกนกวรรณ ชุมรัตน์"></div>
+        <h5>นางสาว กนกวรรณ ชุมรัตน์</h5>
+        <p class="english">KRANOKWAN CHUMRAT</p>
+        <span class="number">นักเรียนเลขที่ 32</span>
+      </article>
+      <article class="profile-card reveal delay-1">
+        <div class="portrait-wrap"><img class="portrait" src="images/pattanawit.jpg" alt="รูปพัฒนวิช ชูมณี"></div>
+        <h5>นาย พัฒนวิช ชูมณี</h5>
+        <p class="english">PATTANAWIT CHUMANEE</p>
+        <span class="number">นักเรียนเลขที่ 24</span>
+      </article>
+    </div>
+    <a class="hero-btn" href="#about">สำรวจแฟ้มสะสมผลงาน <i class="fa-solid fa-arrow-down"></i></a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="section-head reveal"><div class="eyebrow">ABOUT US</div><h2>ประวัติส่วนตัว</h2><p>ข้อมูลพื้นฐานของเจ้าของแฟ้มสะสมผลงานทั้งสองคน</p></div>
+    <div class="about-grid">
+      <article class="person-info reveal">
+        <h3><i class="fa-solid fa-user-graduate"></i> กนกวรรณ ชุมรัตน์</h3>
+        <div class="detail"><span>ชื่อภาษาอังกฤษ</span><strong>Kranokwan Chumrat</strong></div>
+        <div class="detail"><span>เลขที่</span><strong>32</strong></div>
+        <div class="detail"><span>ระดับชั้น</span><strong>มัธยมศึกษาปีที่ 6</strong></div>
+        <div class="detail"><span>แผนการเรียน</span><strong>ศิลป์คำนวณ</strong></div>
+      </article>
+      <article class="person-info reveal delay-1">
+        <h3><i class="fa-solid fa-user-graduate"></i> พัฒนวิช ชูมณี</h3>
+        <div class="detail"><span>ชื่อภาษาอังกฤษ</span><strong>Pattanawit Chumanee</strong></div>
+        <div class="detail"><span>เลขที่</span><strong>24</strong></div>
+        <div class="detail"><span>ระดับชั้น</span><strong>มัธยมศึกษาปีที่ 6</strong></div>
+        <div class="detail"><span>แผนการเรียน</span><strong>ศิลป์คำนวณ</strong></div>
+      </article>
+    </div>
+    <div class="school-note reveal">
+      <div class="school-icon"><i class="fa-solid fa-school"></i></div>
+      <div><h3>สถานศึกษา</h3><p>โรงเรียนทุ่งใหญ่เฉลิมราชอนุสรณ์รัชมังคลาภิเษก</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="education" id="education">
+  <div class="container">
+    <div class="section-head reveal"><div class="eyebrow">EDUCATION</div><h2>ประวัติการศึกษา</h2><p>เส้นทางการศึกษาและผลการเรียน</p></div>
+    <div class="timeline">
+      <div class="edu-item reveal"><div class="edu-dot"></div><article class="edu-card">
+        <h3><i class="fa-solid fa-graduation-cap"></i> ระดับมัธยมศึกษาตอนปลาย</h3>
+        <p>โรงเรียนทุ่งใหญ่เฉลิมราชอนุสรณ์รัชมังคลาภิเษก</p><p>แผนการเรียน ศิลป์คำนวณ</p>
+        <span class="gpa">เกรดเฉลี่ย 3.04</span>
+      </article></div>
+      <div class="edu-item reveal"><div class="edu-dot"></div><article class="edu-card">
+        <h3><i class="fa-solid fa-book-open"></i> ระดับมัธยมศึกษาตอนต้น</h3>
+        <p>โรงเรียนเฉลิมราชาภิเษก</p><p>แผนการเรียน วิทยาศาสตร์ - คณิตศาสตร์</p>
+        <span class="gpa">เกรดเฉลี่ย 3.70</span>
+      </article></div>
+    </div>
+    <p style="text-align:center;color:#777184;font-size:12px;margin-top:16px">หมายเหตุ: ผลการเรียนที่ได้รับมาเป็นข้อมูลของกนกวรรณ โปรดตรวจสอบก่อนนำไปใช้กับอีกบุคคล</p>
+  </div>
+</section>
+
+<section id="activities">
+  <div class="container">
+    <div class="section-head reveal"><div class="eyebrow">ACTIVITIES &amp; AWARDS</div><h2>กิจกรรมและผลงาน</h2><p>ประสบการณ์ที่ช่วยพัฒนาทักษะและการทำงานร่วมกับผู้อื่น</p></div>
+    <div class="activity-grid">
+      <article class="activity-card reveal">
+        <img class="activity-image" src="images/volunteer.jpg" alt="กิจกรรมจิตอาสาพัฒนาวัดและบริการโรงทาน">
+        <div class="activity-content"><div class="activity-tag">ACTIVITY 01</div><h3>จิตอาสาพัฒนาวัดและบริการโรงทาน</h3><p>ร่วมจัดเตรียมอาหารและเครื่องดื่ม ช่วยจัดสถานที่ ดูแลความสะอาด เก็บขยะ และบำรุงรักษาบริเวณวัด ทำให้ได้เรียนรู้การเสียสละและการช่วยเหลือสังคม</p></div>
+      </article>
+      <article class="activity-card reveal delay-1">
+        <img class="activity-image" src="images/sports.jpg" alt="กิจกรรมประธานนำเชียร์คณะสีม่วง">
+        <div class="activity-content"><div class="activity-tag">ACTIVITY 02</div><h3>ประธานนำเชียร์คณะสีม่วง</h3><p>เข้าร่วมงานกีฬาสีหว้าหินเกมส์ ได้ฝึกฝนภาวะผู้นำ การวางแผน การตัดสินใจ และการทำงานร่วมกับผู้อื่น</p></div>
+      </article>
+      <article class="activity-card reveal delay-2">
+        <img class="activity-image" src="images/asean.jpg" alt="กิจกรรมบูธวันอาเซียน">
+        <div class="activity-content"><div class="activity-tag">ACTIVITY 03</div><h3>กิจกรรมบูธวันอาเซียน</h3><p>เป็นตัวแทนนักเรียนชั้นมัธยมศึกษาปีที่ 6/2 จัดกิจกรรมบูธวันอาเซียน เรียนรู้เกี่ยวกับประเทศสมาชิก วัฒนธรรม ภาษา และการทำงานเป็นทีม</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="skills" id="skills">
+  <div class="container">
+    <div class="section-head reveal"><div class="eyebrow">MY SKILLS</div><h2>ความสามารถและทักษะ</h2><p>คุณสมบัติที่นำไปใช้ในการเรียนและการทำงาน</p></div>
+    <div class="skill-grid">
+      <article class="skill-card reveal"><div class="skill-icon"><i class="fa-solid fa-heart"></i></div><h3>ความอดทน</h3><p>มีความอดทนและมุ่งมั่นในการทำงานให้สำเร็จ</p></article>
+      <article class="skill-card reveal delay-1"><div class="skill-icon"><i class="fa-solid fa-list-check"></i></div><h3>ความรับผิดชอบ</h3><p>รับผิดชอบต่อตนเองและผู้อื่น ปฏิบัติหน้าที่อย่างเต็มที่</p></article>
+      <article class="skill-card reveal delay-2"><div class="skill-icon"><i class="fa-solid fa-people-group"></i></div><h3>ภาวะผู้นำ</h3><p>กล้าตัดสินใจ สามารถวางแผนและทำงานร่วมกับผู้อื่น</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="hobbies" id="hobbies">
+  <div class="container">
+    <div class="section-head reveal"><div class="eyebrow">MY HOBBIES</div><h2>งานอดิเรก</h2><p>กิจกรรมที่ชื่นชอบในเวลาว่าง</p></div>
+    <div class="hobby-list">
+      <div class="hobby reveal"><i class="fa-regular fa-newspaper"></i><span>ติดตามข่าวสาร</span></div>
+      <div class="hobby reveal delay-1"><i class="fa-solid fa-headphones"></i><span>ฟังเพลง</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="motto">
+  <div class="container">
+    <div class="section-head reveal"><div class="eyebrow">MY MOTTO</div><h2>คติประจำใจ</h2></div>
+    <div class="quote reveal"><i class="fa-solid fa-quote-left"></i> ความพยายามอยู่ที่ไหน ความสำเร็จอยู่ที่นั่น <i class="fa-solid fa-quote-right"></i></div>
+  </div>
+</section>
+
+<section class="goal" id="goal">
+  <div class="container">
+    <div class="section-head reveal"><div class="eyebrow">MY GOAL</div><h2>เป้าหมายในอนาคต</h2><p>ความฝันและเส้นทางที่มุ่งมั่นจะไปให้ถึง</p></div>
+    <div class="goal-box reveal"><i class="fa-solid fa-flag-checkered"></i><p>เป้าหมายในอนาคตคือการเข้ารับราชการ และก้าวสู่การเป็นผู้บริหารที่มีคุณภาพ ยึดมั่นในความถูกต้อง มีความซื่อสัตย์สุจริต รับผิดชอบต่อหน้าที่ และปฏิบัติงานเพื่อประโยชน์ของส่วนรวม</p></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <h2>THANK YOU</h2>
+    <p>ขอบคุณที่เข้าชมแฟ้มสะสมผลงานของเรา</p>
+    <div class="footer-names">KRANOKWAN CHUMRAT | No.32<br>PATTANAWIT CHUMANEE | No.24</div>
+    <p>โรงเรียนทุ่งใหญ่เฉลิมราชอนุสรณ์รัชมังคลาภิเษก</p>
+    <div class="copyright">© 2026 PORTFOLIO · Designed with <i class="fa-solid fa-heart" style="color:#e6a6cc"></i></div>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" aria-label="กลับขึ้นด้านบน"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script>
+const menuToggle=document.getElementById('menuToggle');
+const navLinks=document.getElementById('navLinks');
+const header=document.getElementById('header');
+const backTop=document.getElementById('backTop');
+const progressBar=document.getElementById('progressBar');
+
+menuToggle.addEventListener('click',()=>{
+  navLinks.classList.toggle('open');
+  menuToggle.innerHTML=navLinks.classList.contains('open')
+    ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+});
+document.querySelectorAll('.nav-links a').forEach(link=>{
+  link.addEventListener('click',()=>{
+    navLinks.classList.remove('open');
+    menuToggle.innerHTML='<i class="fa-solid fa-bars"></i>';
+  });
+});
+
+// Reveal elements smoothly as they enter the screen
+const revealObserver=new IntersectionObserver((entries,observer)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
+
+// Header, back-to-top and reading progress
+window.addEventListener('scroll',()=>{
+  const scrollTop=window.scrollY;
+  const maxScroll=document.documentElement.scrollHeight-window.innerHeight;
+  header.classList.toggle('scrolled',scrollTop>20);
+  backTop.classList.toggle('show',scrollTop>450);
+  progressBar.style.width=(maxScroll>0?(scrollTop/maxScroll)*100:0)+'%';
+});
+backTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+</script>
+</body>
+</html>
